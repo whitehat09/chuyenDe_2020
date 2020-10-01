@@ -1,0 +1,6 @@
+brew install node // cài node
+git clone git://github.com/nodejs/node.git // tải node qua git
+npm install -g gulp // cài gulp
+npm install semantic-ui --save // cài semantic
+gulp build // nhờ gulp để biên dịch các phiên chứ css javascrip 
+https://cdnjs.com/libraries/semantic-ui // địa chỉ các đường dẫn
