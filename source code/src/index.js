@@ -5,6 +5,18 @@ const handlebars = require('express-handlebars');
 const app = express();
 const port = 3000;
 
+const route = require('./routes');
+
+// file tĩnh 
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(express.urlencoded(
+  {
+    extended:true
+  }
+)); //xử lí dữu liệu từ from lên
+app.use(express.json());// xử lí dữu liệu js lên
+
 app.use(morgan('combined')); // hiện thi giao tiếp giao diện và máy chủ trên cmd
 
 // template engine
@@ -14,14 +26,11 @@ app.engine('hbs',handlebars({
 app.set('view engine','hbs');
 app.set('views',path.join(__dirname, 'resources', 'views'));
 
-app.get('/', (req, res) => {
-  res.render('home');
-})
+//route init
+route(app);
 
-app.get('/news', (req, res) => {
-  res.render('news');
-})
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
-})
+});
