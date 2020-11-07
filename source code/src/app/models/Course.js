@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-
 const slug = require('mongoose-slug-generator');
+const mongooseDelete = require('mongoose-delete');
+
 const Schema = mongoose.Schema;
-mongoose.plugin(slug);
+
 const Course = new Schema(
     {
         name: { type: String, require: true }, // bắt buộc tối đa nhập 255 kí tự
@@ -16,5 +17,12 @@ const Course = new Schema(
         timestamps: true,
     },
 );
+
+// add plugins
+mongoose.plugin(slug);
+Course.plugin(mongooseDelete, {
+    deletedAt: true,
+    overrideMethods: 'all',
+});
 
 module.exports = mongoose.model('Course', Course);

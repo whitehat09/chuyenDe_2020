@@ -1,7 +1,13 @@
 <div class="mt-4">
-    <h3>
+    <div>
+        <h3>
         Khoá học của tôi 
     </h3>
+    <a href="/me/trash/courses">
+        Thùng rác
+    </a>
+    </div>
+    
     <table class="table mt-4">
         <thead>
             <tr>
@@ -26,6 +32,15 @@
                     </a>
                 </td>
                 
+            </tr>
+            {{else}}
+            <tr>
+                <td class="text-center mt-4" colspan="5">
+                    Bạn chưa  thêm khoá học nào . 
+                    <a href="/courses/create" >
+                        Hãy thêm khoá học ! 
+                    </a>
+                </td>
             </tr>
             {{/each}}
             
