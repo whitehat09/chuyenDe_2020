@@ -7,6 +7,10 @@
   border-radius: 50%;
   margin-right: 5px; }
 
+.checkbox-select-all-option {
+  width: 180px;
+  margin: 0 16px; }
+
 .btn-floating i {
   display: inline-block;
   width: inherit;
@@ -18,9 +22,14 @@
   line-height: 47px; }
 
 .fab {
-  font-family: "Font Awesome 5 Brands"; }
+  font-family: 'Font Awesome 5 Brands'; }
 
-.fa, .fab, .fad, .fal, .far, .fas {
+.fa,
+.fab,
+.fad,
+.fal,
+.far,
+.fas {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -29,18 +38,23 @@
   text-rendering: auto;
   line-height: 1; }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   box-sizing: border-box; }
 
-user agent stylesheet
-i {
+user agent stylesheet i {
   font-style: italic; }
 
-a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+a:not([href]):not([tabindex]),
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
   color: inherit;
   text-decoration: none; }
 
-a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+a:not([href]):not([tabindex]),
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
   color: inherit;
   text-decoration: none; }
 
