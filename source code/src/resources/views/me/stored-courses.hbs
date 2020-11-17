@@ -21,7 +21,7 @@
                     Xoá
                 </option>
             </select>
-            <button class="btn btn-primary btn-sm disabled check-all-submit-btn">
+            <button class="btn btn-primary btn-sm  check-all-submit-btn" disabled>
                 Thực hiện
             </button>
         </div>
@@ -110,7 +110,8 @@
         // để lắng nghe jquery
         var courseId;
         var deleteForm = document.forms['delete-course-form'];
-        var containerForm = document.forms['container-form'];
+        // var containerForm = document.forms['container-form'];
+        var containerForm = $('form[name="container-form"]');
         var btnDeleteCourse = document.getElementById('btn-delete-course');
         var checkboxAll = $('#checkbox-all');
         var courseItemCheckbox = $('input[name="courseIds[]"]');
@@ -137,27 +138,16 @@
             checkboxAll.prop('checked',isCheckedAll); 
             renderCheckAllSumbitBtn();
         });
-        // check all submit button clided
-
-      
-        checkAllSumitBtn.on('submit', function (e) {
-            var isSubmitable = !$(this).hasClass('disabled');
-            if (!isSubmitable) {
-                e.preventDefault(); 
-            }
-        });
-
+        
         //re-render check all submit button
         function renderCheckAllSumbitBtn() {
             var checkedCount = $('input[name="courseIds[]"]:checked').length;
             // lấy ra số lượng đã check
             if (checkedCount > 0 ) {
-                checkAllSumitBtn.removeClass('disabled');// có 1 check xoá class disabled
+                checkAllSumitBtn.attr('disabled', false);// có 1 check xoá attr disabled
             } else {
-                checkAllSumitBtn.addClass('disabled');
+                checkAllSumitBtn.attr('disabled', true);
             }
         }
-        
-   
     });
 </script>
