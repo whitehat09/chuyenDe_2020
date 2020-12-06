@@ -1,0 +1,22 @@
+.bg-list{
+    background-color: #1f1f1f;
+    color: white;
+}
+.hr-list{
+    border-bottom: 0.1px solid #985050;
+}
+.title-lesson {
+    padding-top: 10px;
+    border-bottom: 1px solid #985050;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+.title-lesson-active {
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid #ffffff;
+}
+.content-course {
+    padding-top: 10px;
+}

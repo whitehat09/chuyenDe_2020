@@ -26,16 +26,25 @@
             </button>
         </div>
     </div>
-    
+
     <table class="table mt-4">
         <thead>
             <tr>
             <tr>
                 <td>#</td>
             <th scope="col">stt</th>
-            <th scope="col">Tên khoá học</th>
-            <th scope="col">Trình độ</th>
-            <th scope="col">Thời gian tạo</th>
+            <th scope="col">
+                Tên khoá học
+                {{{sortable 'name' _sort}}}
+            </th>
+            <th scope="col">
+                Trình độ
+                 {{{sortable 'level' _sort}}}
+            </th>
+            <th scope="col">
+                Thời gian tạo
+                 {{{sortable 'createAt' _sort}}}
+            </th>
             <th></th>
             </tr>
         </thead>

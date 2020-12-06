@@ -8,6 +8,7 @@ const methodOverride = require('method-override'); // put path ....
 
 const route = require('./routes');
 const db = require('./config/db');
+const SortMiddleware = require('./app/middlewares/SortMiddleware');
 
 // connect to db
 db.connect();
@@ -24,6 +25,8 @@ app.use(express.json()); // xử lí dữu liệu js lên
 app.use(morgan('combined')); // hiện thi giao tiếp giao diện và máy chủ trên cmd
 
 app.use(methodOverride('_method'));
+// custom Middlewares
+app.use(SortMiddleware);
 
 // template engine
 app.engine(
@@ -32,6 +35,23 @@ app.engine(
         extname: '.hbs',
         helpers: {
             sum: (a, b) => a + b,
+            sortable: (field, sort) => {
+                const sortType = field === sort.column ? sort.type : 'default';
+                const icons = {
+                    default: 'oi oi-elevator',
+                    asc: 'oi oi-sort-ascending',
+                    desc: 'oi oi-sort-descending',
+                };
+                const types = {
+                    default: 'desc',
+                    asc: 'desc',
+                    desc: 'asc',
+                };
+                const icon = icons[sortType];
+                const type = types[sortType];
+                return '<a href="?_sort&column=${field}&type=${type}"><span class="${icon}"></span></a>';
+                //return '<a href="?_sort&column=${sort.column}&type=${type}"><span class="${icon}" ></span></a>';
+            },
         },
     }),
 ); // định nghĩa

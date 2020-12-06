@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://localhost:3000/css/app.css">
+    <link rel="stylesheet" href="http://localhost:3000/vendor/open-iconic-master/font/css/open-iconic-bootstrap.css">
 
 <!--MDB-->
     <!-- Font Awesome -->
@@ -12,16 +13,19 @@
 
     <title>Softt education</title>
 </head>
-<body>
+<body >
     <div class="app" >
         <div >
-             <header>
-                {{> header}}
-            
-            </header>
-            <div class="container" >
-                {{{body}}}
+            <div style="min-height: calc(100vh - 259px);">
+                <header>
+                    {{> header}}
+                
+                </header>
+                <div class="container" >
+                    {{{body}}}
+                </div>
             </div>
+             
             
             <footer>
                 {{> footer}}

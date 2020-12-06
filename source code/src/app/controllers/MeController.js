@@ -6,7 +6,13 @@ const mongoose = require('../../util/mongoose');
 class MeController {
     // [get]  /me/stored/courses
     storedCourses(req, res, next) {
-        Promise.all([Course.find({}), Course.countDocumentsDeleted()])
+        let courseQuery = Course.find({});
+        if (req.query.hasOwnProperty('_sort')) {
+            courseQuery = courseQuery.sort({
+                [req.query.column]: req.query.type,
+            });
+        }
+        Promise.all([courseQuery, Course.countDocumentsDeleted()])
             // xử lý bất đồng bộ giưa tìm và đếm số lượng bị xoá
             .then(([courses, deleteCount]) =>
                 res.render('me/stored-courses', {
